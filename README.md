@@ -222,11 +222,12 @@ Ini adalah contoh pewarisan (inheritance) di mana kelas `staff_magang` adalah tu
 
 Dalam metode `hitungGaji` yang di-overide dalam kelas `staff_magang`, perhitungan gaji karyawan staf magang diimplementasikan. Dalam hal ini, gaji staf magang adalah gaji dasar (yang diwarisi dari kelas `karyawan`) dibagi dengan atribut `shift`, yang mungkin merepresentasikan shift kerja. Dengan meng-overide metode `hitungGaji`, Anda dapat menentukan cara perhitungan gaji yang berbeda sesuai dengan jenis karyawan. Dalam hal ini, metode `hitungGaji` untuk karyawan staf magang mengembalikan hasil bagi antara gaji dan shift kerja, yang mungkin mencerminkan perhitungan gaji berdasarkan jumlah shift kerja yang dilakukan.
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/11485507-dfd0-452d-aeeb-f8e900a67b8b)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/6239fb86-2b62-43b9-9c4b-2fa4a611cf38)
 
 Metode `getjamKerja` dalam kelas `staff_magang` mengembalikan nilai dari atribut `durasi_kerja`, yang merupakan durasi kerja karyawan manajer. Metode ini merupakan metode getter yang memungkinkan akses ke nilai `durasi_kerja` dari luar kelas.
 
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/b6e7a808-7a06-4468-9671-7d1d11bfe233)
+
 
 ## model
 ### databaseConnection.java
@@ -242,7 +243,7 @@ Kode di atas adalah import statement yang mengimpor berbagai kelas dan pustaka y
 8. `import java.util.ArrayList;`: Ini mengimpor kelas `ArrayList` dari paket `java.util`. `ArrayList` adalah struktur data yang digunakan untuk menyimpan koleksi data yang dinamis. Dalam konteks pengembangan aplikasi dengan database, `ArrayList` sering digunakan untuk menyimpan dan mengelola data yang diambil dari database.
 9. Semua import statement ini dibutuhkan dalam konteks pengembangan aplikasi yang berinteraksi dengan database menggunakan JDBC (Java Database Connectivity).
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/48a8fa58-601e-4e4a-8e7e-4ab357977523)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/11485507-dfd0-452d-aeeb-f8e900a67b8b)
 
 Kode di atas mendefinisikan kelas `databaseConnection`, yang digunakan untuk mengelola koneksi database menggunakan JDBC (Java Database Connectivity). Berikut adalah penjelasan singkat tentang kelas `databaseConnection` dan metodenya:
 - `private final static String dbhost`: Variabel ini mengandung nama host atau alamat server database.
@@ -257,7 +258,7 @@ Kode di atas mendefinisikan kelas `databaseConnection`, yang digunakan untuk men
   - Jika terjadi kesalahan SQL saat mencoba membuat koneksi, metode `displayErrors(ex)` akan dipanggil untuk menampilkan pesan kesalahan.
 Kelas `databaseConnection` dan metodenya adalah komponen yang penting dalam pengembangan aplikasi yang berinteraksi dengan database. Dengan menggunakan kelas ini, Anda dapat membuat dan mengelola koneksi ke database MySQL dan menjalankan pernyataan SQL untuk mengambil, menyimpan, atau memperbarui data dalam database.
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/3f87d48d-4dcc-469d-aab6-801b737bd824)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/48a8fa58-601e-4e4a-8e7e-4ab357977523)
 
 Metode `closeConnection` dalam kelas `databaseConnection` digunakan untuk menutup semua objek yang terkait dengan koneksi database, seperti `ResultSet`, `Statement`, `PreparedStatement`, dan koneksi itu sendiri. Ini adalah praktik yang baik untuk selalu menutup objek-objek ini setelah selesai menggunakan koneksi database untuk mencegah kebocoran sumber daya dan menghindari masalah dalam manajemen sumber daya. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `closeConnection`:
 - Metode ini mengelola penutupan objek-objek terkait dengan koneksi database dalam blok `try-catch`. Blok `try` digunakan untuk mencoba mengeksekusi kode penutupan, dan jika terjadi pengecualian, blok `catch` akan menangani kesalahan.
@@ -266,7 +267,7 @@ Metode `closeConnection` dalam kelas `databaseConnection` digunakan untuk menutu
 - Jika terjadi kesalahan SQL saat menutup objek-objek, metode `displayErrors(ex)` dipanggil untuk menampilkan pesan kesalahan.
 Dengan metode `closeConnection`, Anda dapat memastikan bahwa sumber daya yang digunakan dalam koneksi database dibersihkan dengan benar dan aman setelah selesai digunakan, yang merupakan praktik terbaik dalam pengembangan aplikasi yang berinteraksi dengan database.
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d63b3a5c-1554-45a0-9f80-b42f33f28919)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/3f87d48d-4dcc-469d-aab6-801b737bd824)
 
 Metode `all` dalam kelas `databaseConnection` digunakan untuk menjalankan sebuah query SQL ke database dan mengambil semua hasil query dalam bentuk daftar ArrayList. Metode ini menerima sebuah parameter `query`, yang adalah pernyataan SQL yang akan dieksekusi untuk mengambil data dari database. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `all`:
 - Metode ini membuat sebuah objek `Statement` menggunakan koneksi yang sudah terbuka dan menjalankan query SQL dengan `executeQuery(query)`.
@@ -280,7 +281,7 @@ Metode `all` dalam kelas `databaseConnection` digunakan untuk menjalankan sebuah
 - Akhirnya, metode mengembalikan ArrayList `rows`, yang berisi semua data hasil query dalam bentuk ArrayList<ArrayList>. Setiap elemen dalam ArrayList `rows` merupakan ArrayList yang mewakili satu baris data dari hasil query.
 Dengan metode `all`, Anda dapat dengan mudah mengambil data dari database dan mengembalikannya dalam bentuk ArrayList yang dapat diolah lebih lanjut dalam aplikasi Anda.
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c7437770-8d2a-495a-8a0c-82263b184ba3)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d63b3a5c-1554-45a0-9f80-b42f33f28919)
 
 Metode `generateLastId` dalam kelas `databaseConnection` digunakan untuk mengambil nilai ID terakhir yang di-generate oleh operasi penambahan data ke database (misalnya, saat menggunakan pernyataan SQL `INSERT` dengan kolom ID yang di-generate secara otomatis).
 Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `generateLastId`:
@@ -292,7 +293,7 @@ Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `genera
 - Jika tidak ada hasil ID terakhir yang berhasil ditemukan, maka metode mengembalikan nilai 0.
 Dengan metode `generateLastId`, Anda dapat mengambil nilai ID terakhir yang di-generate setelah operasi penambahan data ke database, yang sering digunakan dalam skenario di mana Anda perlu mengakses ID dari data yang baru saja ditambahkan ke database.
 
-![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c812a560-71d2-4f6f-969d-791820d62d9f)
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c7437770-8d2a-495a-8a0c-82263b184ba3)
 
 Metode `displayErrors` dalam kelas `databaseConnection` digunakan untuk menampilkan informasi tentang kesalahan SQL yang terjadi. Metode ini membantu dalam pemecahan masalah dan pemantauan ketika ada kesalahan dalam operasi database. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `displayErrors`:
 - Metode ini menerima parameter `ex` yang merupakan objek `SQLException`. Objek ini berisi informasi tentang kesalahan SQL yang terjadi.
@@ -301,8 +302,9 @@ Metode `displayErrors` dalam kelas `databaseConnection` digunakan untuk menampil
   2. `"SQLState: " + ex.getSQLState()`: Ini menampilkan kode SQLState yang mengidentifikasi kategori kesalahan. Kode ini dapat membantu dalam memahami jenis kesalahan yang terjadi.
   3. `"VendorError: " + ex.getErrorCode()`: Ini menampilkan kode kesalahan yang diberikan oleh vendor database. Kode ini dapat memberikan informasi lebih lanjut tentang kesalahan tertentu.
 - Dengan informasi-informasi di atas, Anda dapat mengidentifikasi dan memecahkan masalah ketika ada kesalahan dalam operasi database. Pesan kesalahan tersebut dapat membantu Anda dalam menentukan langkah-langkah perbaikan yang diperlukan.
+- 
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c812a560-71d2-4f6f-969d-791820d62d9f)
 
-![Uploading image.png…]()
 
 
 
