@@ -20,9 +20,14 @@ MuVista Glow Company adalah perusahaan yang berfokus pada industri kecantikan. P
 
 ## Hierarki Kelas
 Hierarki kelas dibuat berdasarkan program aplikasi yang telah dibuat, yang dimana pada program tersebut menerapkan materi inheritance atau bisa disebut dengan turunan. Berikut adalah hierarki kelas dari program aplikasi yang telah dibuat:
-
 ![PA_PBO_FLOWCHART-hc drawio](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/c7ad231a-f2fb-4dea-b29c-bbd0d3cf3dee)
   
 ## Source Code dan Penjelasan
 
 ## Output Program
+1. Tampilan Menu Login
+2. Tampilan Menu Utama
+3. Tampilan Create Data Karyawan
+4. Tampilan Update Data Karyawan
+5. Tampilan Hapus Data Karyawan
+6. Tampilan Lihat Data Karyawan
