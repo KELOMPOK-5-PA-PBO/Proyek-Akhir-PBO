@@ -268,7 +268,43 @@ Dengan metode `closeConnection`, Anda dapat memastikan bahwa sumber daya yang di
 
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d63b3a5c-1554-45a0-9f80-b42f33f28919)
 
+Metode `all` dalam kelas `databaseConnection` digunakan untuk menjalankan sebuah query SQL ke database dan mengambil semua hasil query dalam bentuk daftar ArrayList. Metode ini menerima sebuah parameter `query`, yang adalah pernyataan SQL yang akan dieksekusi untuk mengambil data dari database. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `all`:
+- Metode ini membuat sebuah objek `Statement` menggunakan koneksi yang sudah terbuka dan menjalankan query SQL dengan `executeQuery(query)`.
+- Selanjutnya, metode ini mengambil hasil query satu per satu menggunakan perulangan `while (this.resultSet.next())`. Dalam setiap iterasi, metode ini melakukan hal berikut:
+  - Mengambil metadata (informasi tentang struktur hasil query) menggunakan `ResultSetMetaData`.
+  - Menghitung jumlah kolom (columnCount) dalam hasil query.
+  - Membuat ArrayList `columns` untuk menyimpan nilai-nilai dari setiap kolom dalam baris hasil query.
+  - Mengambil nilai-nilai setiap kolom dalam baris hasil query menggunakan perulangan `for`.
+  - Menambahkan ArrayList `columns` ke ArrayList `rows`, yang akan berisi semua baris hasil query.
+- Jika terjadi kesalahan SQL saat menjalankan query, metode `displayErrors(ex)` dipanggil untuk menampilkan pesan kesalahan.
+- Akhirnya, metode mengembalikan ArrayList `rows`, yang berisi semua data hasil query dalam bentuk ArrayList<ArrayList>. Setiap elemen dalam ArrayList `rows` merupakan ArrayList yang mewakili satu baris data dari hasil query.
+Dengan metode `all`, Anda dapat dengan mudah mengambil data dari database dan mengembalikannya dalam bentuk ArrayList yang dapat diolah lebih lanjut dalam aplikasi Anda.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c7437770-8d2a-495a-8a0c-82263b184ba3)
+
+Metode `generateLastId` dalam kelas `databaseConnection` digunakan untuk mengambil nilai ID terakhir yang di-generate oleh operasi penambahan data ke database (misalnya, saat menggunakan pernyataan SQL `INSERT` dengan kolom ID yang di-generate secara otomatis).
+Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `generateLastId`:
+- Metode ini mencoba mengambil hasil ID terakhir yang di-generate setelah melakukan operasi penambahan data ke database. Ini berguna jika Anda memiliki kolom ID yang di-generate otomatis dalam tabel database, seperti ID yang merupakan kunci utama dan di-generate secara otomatis saat menambahkan data baru.
+- Pertama, metode ini mencoba mendapatkan hasil ID terakhir dari objek `Statement` jika objek tersebut ada (tidak null). Jika objek `Statement` tidak null, maka metode ini mencoba mendapatkan hasil ID terakhir dari objek `Statement` menggunakan `getGeneratedKeys()`.
+- Selanjutnya, metode ini mencoba mendapatkan hasil ID terakhir dari objek `PreparedStatement` jika objek tersebut ada (tidak null). Jika objek `PreparedStatement` tidak null, maka metode ini mencoba mendapatkan hasil ID terakhir dari objek `PreparedStatement` menggunakan `getGeneratedKeys()`.
+- Jika hasil ID terakhir berhasil ditemukan dengan baik dari salah satu objek (Statement atau PreparedStatement), maka metode mengambil ID tersebut dengan `resultSet.getInt(1)` dan mengembalikannya sebagai hasil.
+- Jika terjadi kesalahan SQL saat mencoba mendapatkan hasil ID terakhir, metode `displayErrors(ex)` dipanggil untuk menampilkan pesan kesalahan.
+- Jika tidak ada hasil ID terakhir yang berhasil ditemukan, maka metode mengembalikan nilai 0.
+Dengan metode `generateLastId`, Anda dapat mengambil nilai ID terakhir yang di-generate setelah operasi penambahan data ke database, yang sering digunakan dalam skenario di mana Anda perlu mengakses ID dari data yang baru saja ditambahkan ke database.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c812a560-71d2-4f6f-969d-791820d62d9f)
+
+Metode `displayErrors` dalam kelas `databaseConnection` digunakan untuk menampilkan informasi tentang kesalahan SQL yang terjadi. Metode ini membantu dalam pemecahan masalah dan pemantauan ketika ada kesalahan dalam operasi database. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `displayErrors`:
+- Metode ini menerima parameter `ex` yang merupakan objek `SQLException`. Objek ini berisi informasi tentang kesalahan SQL yang terjadi.
+- Dalam metode ini, tiga informasi utama ditampilkan dalam pesan kesalahan:
+  1. `"SQLException: " + ex.getMessage()`: Ini menampilkan pesan kesalahan yang menjelaskan kesalahan SQL yang terjadi. Pesan ini dapat memberikan petunjuk tentang penyebab kesalahan.
+  2. `"SQLState: " + ex.getSQLState()`: Ini menampilkan kode SQLState yang mengidentifikasi kategori kesalahan. Kode ini dapat membantu dalam memahami jenis kesalahan yang terjadi.
+  3. `"VendorError: " + ex.getErrorCode()`: Ini menampilkan kode kesalahan yang diberikan oleh vendor database. Kode ini dapat memberikan informasi lebih lanjut tentang kesalahan tertentu.
+- Dengan informasi-informasi di atas, Anda dapat mengidentifikasi dan memecahkan masalah ketika ada kesalahan dalam operasi database. Pesan kesalahan tersebut dapat membantu Anda dalam menentukan langkah-langkah perbaikan yang diperlukan.
+
 ![Uploading image.png…]()
+
+
 
 ## Output Program
 1. Tampilan Menu Login
