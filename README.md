@@ -19,6 +19,7 @@ Aplikasi manajemen karyawan perusahaan adalah sebuah perangkat lunak yang diranc
 Aplikasi ini memberikan manfaat besar bagi perusahaan, karena memungkinkan mereka untuk mengelola dan mengakses informasi karyawan dengan lebih efisien. Dengan pengkategorian berdasarkan jabatan, perusahaan dapat mengelola gaji, jam kerja, dan atribut lainnya sesuai dengan kebutuhan masing-masing karyawan. Ini juga membantu dalam pemantauan karyawan dan pengambilan keputusan yang lebih baik terkait sumber daya manusia.
 
 ## 📊 Flowchart
+![PA_PBO_FLOWCHART-flowchart-full drawio](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/8877c8b9-9040-49a3-9e99-af2febb96581)
 
 ## 🛢ERD
 ![PA-VER-6 1](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/2274403a-843e-49c5-980c-5143b4608e31)
