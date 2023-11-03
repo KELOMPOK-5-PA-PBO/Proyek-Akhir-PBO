@@ -305,6 +305,92 @@ Metode `displayErrors` dalam kelas `databaseConnection` digunakan untuk menampil
 - 
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c812a560-71d2-4f6f-969d-791820d62d9f)
 
+## view (pemanggilan method-method lain didalam kelas entitas)
+### show data untuk menu memperlihatkan data dalam tabel
+Metode `show_data` nampaknya digunakan untuk mengambil data dari tabel "karyawan" dalam database dan menampilkannya dalam sebuah tabel. Metode ini berisi beberapa langkah yang dilakukan dalam proses tersebut:
+- `databaseConnection db = new databaseConnection();`: Anda membuat objek `databaseConnection` dengan nama `db` untuk mengelola koneksi ke database.
+- `db.openConnection();`: Metode `openConnection` dipanggil untuk membuka koneksi ke database sebelum mengambil data.
+- `ArrayList<ArrayList> members = db.all("SELECT * FROM karyawan");`: Anda menggunakan objek `db` untuk menjalankan query SQL "SELECT * FROM karyawan" ke database. Hasil query tersebut disimpan dalam `ArrayList<ArrayList>` dengan nama `members`. Setiap elemen dalam `members` merupakan ArrayList yang mewakili satu baris data dari hasil query.
+- `DefaultTableModel model = new DefaultTableModel();`: Anda membuat objek `DefaultTableModel` dengan nama `model` untuk digunakan dalam tabel. Ini adalah model yang akan digunakan untuk menampilkan data dalam tabel.
+- Anda menambahkan kolom-kolom ke model sesuai dengan data yang akan ditampilkan, yaitu "NIP", "Nama", "Email", "No Telpon", "Gaji", "Jam Kerja", dan "Status".
+- Menggunakan loop `for` Anda menambahkan data dari `members` ke model menggunakan `model.addRow(rowData.toArray())`. Dalam loop ini, setiap `rowData` (ArrayList yang mewakili satu baris data) diubah menjadi array dan ditambahkan ke model sebagai baris baru dalam tabel.
+- `db.closeConnection();`: Setelah selesai mengambil dan menampilkan data, Anda menutup koneksi ke database dengan memanggil `closeConnection` untuk membersihkan sumber daya.
+- Terakhir, Anda menetapkan model yang telah dibuat ke tabel dengan `tabeltambah.setModel(model)`, sehingga data yang diambil dari database akan ditampilkan dalam tabel pada antarmuka pengguna.
+Metode `show_data` ini berguna untuk menampilkan data dari database ke dalam antarmuka pengguna Anda, seperti dalam sebuah tabel. Hal ini memungkinkan pengguna untuk melihat data dengan mudah dan memantau informasi dalam aplikasi Anda.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/e8238a93-0a78-4bfe-a7bb-84929b288aae)
+
+### create untuk menu tambah data
+
+Kode di atas adalah bagian dari sebuah blok `try-catch` yang digunakan untuk menangani penginputan data dan menambahkannya ke dalam database. Berikut adalah penjelasan singkat tentang apa yang terjadi dalam kode tersebut:
+ `int intValue = Integer.parseInt(txtnip.getText());`: Ini mencoba mengambil nilai dari inputan `txtnip` (sebuah teks) dan mengubahnya menjadi tipe data integer. Jika inputan tidak valid sebagai integer, maka akan menghasilkan pengecualian `NumberFormatException`.
+- Objek `k` dari kelas `karyawan` dibuat, dan statusnya diatur menjadi "Aktif".
+- Inputan status kemudian disimpan dalam variabel `statusnya`.
+- Anda mengambil nilai yang dipilih dari combo box `cbjabatan` dan menyimpannya dalam variabel `pilih`.
+- Kemudian, Anda menggunakan percabangan `if-else` untuk memeriksa pilihan yang dipilih oleh pengguna:
+   - Jika pilihan adalah "manager", maka Anda membuat objek `manager` (dari kelas yang sesuai) dengan parameter yang sesuai, seperti `intValue`, `txtnama.getText()`, dan sebagainya. Kemudian, Anda menghitung gaji dengan `m.hitungGaji()` dan mengatur jam kerja dengan `m.setjamKerja(10, true)`. Kemudian, Anda mengisi properti-properti objek `m` dengan data yang diambil dari inputan.
+   - Jika pilihan adalah "staff", maka Anda melakukan hal yang serupa untuk objek `staff`.
+   - Jika pilihan adalah "staff magang", maka Anda melakukan hal yang serupa untuk objek `staff_magang`.
+- Kemudian, Anda memanggil metode `create` pada objek yang sesuai (misalnya, `m.create()`) untuk mencoba menambahkan data ke database. Jika operasi berhasil, Anda menampilkan pesan "Data Berhasil Ditambahkan!" dan memanggil metode `show_data()` untuk menampilkan data yang baru ditambahkan. Jika gagal, Anda menampilkan pesan "Data Gagal Ditambahkan!".
+- Di dalam blok `catch (NumberFormatException e)`, Anda menangani pengecualian jika pengubahan teks menjadi integer (`parseInt`) gagal. Ini terjadi jika NIP yang dimasukkan tidak valid sebagai bilangan bulat. Anda menampilkan pesan kesalahan "Periksa NIP Anda Kembali!" dan menghentikan proses lebih lanjut dengan `return`.
+- Kode ini digunakan untuk mengambil data inputan, menghitung gaji dan jam kerja berdasarkan jabatan yang dipilih, dan menambahkan data tersebut ke dalam database. Jika ada kesalahan dalam inputan NIP, maka akan ditangani dengan pengecualian `NumberFormatException`.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/949a9cd7-5ccf-4fb6-9c9a-ee21ff85547a)
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/b7db8c1f-95b0-482a-b71b-ad1db53e1692)
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/bc84d7c0-cdeb-48e0-a8cc-78b5ddfaf6dc)
+
+### delete untuk menu delete karyawan
+Kode di atas nampaknya digunakan untuk menghapus data karyawan dari database berdasarkan NIP (Nomor Induk Pegawai) yang dimasukkan oleh pengguna. Berikut adalah penjelasan singkat tentang apa yang terjadi dalam kode tersebut:
+- Anda membuat objek `karyawan` dari kelas `karyawan`.
+- `int intValue = Integer.parseInt(txtnip.getText());`: Anda mencoba mengambil nilai dari inputan `txtnip` (sebuah teks) dan mengubahnya menjadi tipe data integer. Ini adalah NIP yang akan digunakan untuk mencari dan menghapus data karyawan.
+   Anda menggunakan metode `find(intValue)` pada objek `karyawan` untuk mencari data karyawan berdasarkan NIP yang dimasukkan. Metode ini akan mencoba menemukan data karyawan dengan NIP yang sesuai di dalam database.
+- Setelah data karyawan ditemukan, Anda menggunakan kondisi `if` untuk memeriksa apakah operasi `delete` berhasil atau tidak. Jika berhasil (mengembalikan `true`), Anda menampilkan pesan "Data Berhasil Dihapus!", memanggil `show_data()` untuk menampilkan data yang telah diperbarui, dan membersihkan formulir inputan dengan `kosongkanform()`. Jika gagal (mengembalikan `false`), Anda menampilkan pesan "Data Gagal Dihapus!".
+- Di dalam blok `catch (NumberFormatException e)`, Anda menangani pengecualian jika pengubahan teks menjadi integer (`parseInt`) gagal. Ini terjadi jika NIP yang dimasukkan tidak valid sebagai bilangan bulat. Anda menampilkan pesan kesalahan "Periksa NIP Anda Kembali!" dan menghentikan proses lebih lanjut dengan `return`.
+- Kode ini digunakan untuk menghapus data karyawan dari database berdasarkan NIP yang dimasukkan oleh pengguna. Jika NIP tidak valid sebagai bilangan bulat, kesalahan akan ditangani dengan pengecualian `NumberFormatException`.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/20a4631d-2df4-4b1d-97fa-ed0ecf91a520)
+
+### static untuk menu hitung jumlah karyawan
+Kode di atas digunakan untuk menghitung total jumlah karyawan dalam database dan menampilkan hasilnya dalam suatu elemen antarmuka pengguna. Berikut penjelasan singkat tentang apa yang terjadi dalam kode tersebut:
+- `int totalkaryawan = karyawan.hitungKaryawan();`: Anda menggunakan metode statis `hitungKaryawan()` dari kelas `karyawan` untuk menghitung jumlah total karyawan dalam database. Metode ini akan mengembalikan jumlah karyawan.
+- `lbhasil.setText(Integer.toString(totalkaryawan));`: Anda mengambil nilai integer `totalkaryawan` dan mengubahnya menjadi teks dengan `Integer.toString()`. Kemudian, Anda mengatur teks ini ke elemen dengan nama `lbhasil`. Ini digunakan untuk menampilkan jumlah total karyawan dalam antarmuka pengguna, misalnya, dalam sebuah label atau elemen teks.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d791ab98-a9d2-4351-99aa-da1748f7521b)
+
+### update untuk menu update data karyawan
+
+Kode di atas digunakan untuk memperbarui data karyawan dalam database berdasarkan NIP (Nomor Induk Pegawai) yang dimasukkan oleh pengguna. Berikut adalah penjelasan singkat tentang apa yang terjadi dalam kode tersebut:
+- Anda membuat objek `karyawan` dari kelas `karyawan`.
+- `int intValue = Integer.parseInt(txtnip.getText());`: Anda mencoba mengambil nilai dari inputan `txtnip` (sebuah teks) dan mengubahnya menjadi tipe data integer. Ini adalah NIP yang akan digunakan untuk mencari dan memperbarui data karyawan.
+- Anda menggunakan metode `setStatus("Aktif")` pada objek `karyawan` untuk mengatur statusnya menjadi "Aktif". Kemudian, Anda mengambil status tersebut dan menyimpannya dalam variabel `statusnya`.
+- Anda mengambil nilai yang dipilih dari combo box `cbjabatan` dan menyimpannya dalam variabel `pilih`.
+- Kemudian, Anda menggunakan percabangan `if-else` untuk memeriksa pilihan yang dipilih oleh pengguna:
+   - Jika pilihan adalah "manager", maka Anda membuat objek `manager` (dari kelas yang sesuai) dengan parameter yang sesuai, seperti `intValue`, `txtnama.getText()`, dan sebagainya. Kemudian, Anda menghitung gaji dengan `m.hitungGaji()` dan mengatur jam kerja dengan `m.setjamKerja(10, true)`. Kemudian, Anda mengisi properti-properti objek `m` dengan data yang diambil dari inputan.
+   - Jika pilihan adalah "staff", maka Anda melakukan hal yang serupa untuk objek `staff`.
+   - Jika pilihan adalah "staff magang", maka Anda melakukan hal yang serupa untuk objek `staff_magang`.
+- Setelah mengisi objek karyawan yang sesuai (misalnya, `m`, `s`, atau `sm`), Anda memanggil metode `update()` pada objek tersebut untuk mencoba memperbarui data karyawan di database. Jika operasi berhasil (mengembalikan `true`), Anda menampilkan pesan "Data Berhasil Diperbarui!", memanggil `show_data()` untuk menampilkan data yang telah diperbarui, dan membersihkan formulir inputan dengan `kosongkanform()`. Jika gagal (mengembalikan `false`), Anda menampilkan pesan "Data Gagal Diperbarui!".
+- Di dalam blok `catch (NumberFormatException e)`, Anda menangani pengecualian jika pengubahan teks menjadi integer (`parseInt`) gagal. Ini terjadi jika NIP yang dimasukkan tidak valid sebagai bilangan bulat. Anda menampilkan pesan kesalahan "Periksa NIP Anda Kembali!" dan menghentikan proses lebih lanjut dengan `return`.
+- Kode ini digunakan untuk memperbarui data karyawan dalam database berdasarkan NIP yang dimasukkan oleh pengguna. Jika NIP tidak valid sebagai bilangan bulat, kesalahan akan ditangani dengan pengecualian `NumberFormatException`.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d4ae2923-a241-46c1-a9ad-acf57e02f971)
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/957c5a09-8435-43c6-910a-9653af0287b7)
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/9956dbe7-dd2c-4636-b263-0078aac00493)
+
+### login admin
+Kode di atas digunakan untuk melakukan proses otentikasi atau login sebagai admin ke dalam suatu aplikasi. Berikut penjelasan singkat tentang apa yang terjadi dalam kode tersebut:
+- Anda membuat objek `admin` dari kelas `admin`.
+- `admin.username = txtuser.getText();` dan `admin.password = txtpass.getText();`: Anda mengambil nilai yang dimasukkan oleh pengguna dalam inputan `txtuser` dan `txtpass` dan menyimpannya dalam properti `username` dan `password` objek `admin`. Ini adalah data login yang akan digunakan untuk memeriksa kecocokan dengan data admin yang ada dalam database.
+- Anda menggunakan metode `login()` pada objek `admin` untuk mencoba login. Metode ini akan memeriksa apakah ada admin dengan username dan password yang sesuai dalam database.
+- Anda menggunakan kondisi `if` untuk memeriksa hasil dari metode `login()`:
+   - Jika login berhasil (mengembalikan `true`), Anda menampilkan pesan "Right Username or Password!" dan membuka jendela `menuUtama` (mnu), kemudian menutup jendela login saat ini dengan `this.dispose()`.
+   - Jika login gagal (mengembalikan `false`), Anda menampilkan pesan "Wrong Username or Password!", menyalakan kursor ke inputan `txtpass` dengan `txtpass.requestFocus()`, dan membersihkan formulir inputan dengan `kosongkanform()`.
+Dengan demikian, kode ini digunakan untuk memeriksa apakah username dan password yang dimasukkan oleh pengguna sesuai dengan data admin yang ada dalam database. Jika sesuai, pengguna diarahkan ke jendela utama (menuUtama), jika tidak, mereka diberi kesempatan untuk mencoba lagi.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/19044ae3-8bc5-4f03-832d-968075f1fadc)
 
 
 
