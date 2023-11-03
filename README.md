@@ -229,7 +229,7 @@ Metode `getjamKerja` dalam kelas `staff_magang` mengembalikan nilai dari atribut
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/b6e7a808-7a06-4468-9671-7d1d11bfe233)
 
 
-## model
+## Package model
 ### databaseConnection.java
 
 Kode di atas adalah import statement yang mengimpor berbagai kelas dan pustaka yang diperlukan dalam paket `model` untuk mengelola database. Berikut penjelasan singkat tentang setiap import statement:
@@ -305,7 +305,7 @@ Metode `displayErrors` dalam kelas `databaseConnection` digunakan untuk menampil
 - 
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/c812a560-71d2-4f6f-969d-791820d62d9f)
 
-## view (pemanggilan method-method lain didalam kelas entitas)
+## Package view (pemanggilan method-method lain didalam kelas entitas)
 ### show data untuk menu memperlihatkan data dalam tabel
 Metode `show_data` nampaknya digunakan untuk mengambil data dari tabel "karyawan" dalam database dan menampilkannya dalam sebuah tabel. Metode ini berisi beberapa langkah yang dilakukan dalam proses tersebut:
 - `databaseConnection db = new databaseConnection();`: Anda membuat objek `databaseConnection` dengan nama `db` untuk mengelola koneksi ke database.
