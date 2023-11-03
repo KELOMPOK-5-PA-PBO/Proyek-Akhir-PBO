@@ -396,8 +396,26 @@ Dengan demikian, kode ini digunakan untuk memeriksa apakah username dan password
 
 ## Output Program
 1. Tampilan Menu Login
+   
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/63209e9b-926e-49f5-a61d-2fe98cbf5509)
+
 2. Tampilan Menu Utama
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/e7efa5a0-809f-44b1-877e-d50c3a4cd021)
+
 3. Tampilan Create Data Karyawan
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/7e67bc8a-c94a-40b5-967e-daf496a5a038)
+
 4. Tampilan Update Data Karyawan
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/bf9da0f9-09a5-4265-a7f1-39633edcf4c4)
+
 5. Tampilan Hapus Data Karyawan
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/4e9d4787-12f5-4dbf-83f0-00e8f3955a91)
+
 6. Tampilan Lihat Data Karyawan
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/5270a8f9-b162-4b14-969a-1b851946b971)
+
