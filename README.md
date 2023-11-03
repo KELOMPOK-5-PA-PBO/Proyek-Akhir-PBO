@@ -186,7 +186,89 @@ Hasil dari perhitungan ini adalah total gaji karyawan manajer. Dengan meng-overr
 
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/572c84bd-fd6d-44ac-a0ef-44ecaca613a3)
 
+Metode `getjamKerja` dalam kelas `manager` mengembalikan nilai dari atribut `durasi_kerja`, yang merupakan durasi kerja karyawan manajer. Metode ini merupakan metode getter yang memungkinkan akses ke nilai `durasi_kerja` dari luar kelas.
 
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/8f079526-0190-49fe-a94c-d56347eb723f)
+
+### staff.java
+
+Kode di atas adalah definisi kelas `staff` yang merupakan turunan dari kelas `karyawan`. Kelas `staff` tidak memiliki atribut tambahan dibandingkan dengan kelas `karyawan`, dan konstruktor `staff` digunakan untuk membuat objek `staff` dengan menginisialisasi atribut-atribut kelas `karyawan`. Berikut penjelasan singkat tentang kelas `staff`:
+- Kelas `staff` mewarisi atribut-atribut dasar dari kelas `karyawan`, seperti NIP, nama, email, nomor telepon, gaji, dan status.
+- Konstruktor `staff` digunakan untuk membuat objek `staff`. Konstruktor ini menerima beberapa parameter yang digunakan untuk menginisialisasi atribut-atribut dalam kelas `staff`. Parameter yang diterima meliputi NIP, nama, email, nomor telepon, gaji, dan status.
+- Dalam konstruktor, Anda menginisialisasi atribut-atribut kelas `staff` menggunakan nilai-nilai yang diterima dari parameter konstruktor. Beberapa atribut diwarisi dari kelas `karyawan`, seperti NIP, nama, email, nomor telepon, gaji, dan status.
+- Ini adalah contoh pewarisan (inheritance) di mana kelas `staff` adalah turunan dari kelas `karyawan`, dan kelas `staff` tidak memiliki atribut tambahan. Kelas `staff` dapat digunakan untuk mewakili karyawan dengan jenis "staff" yang memiliki atribut dasar yang sama dengan karyawan lainnya.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/3b5cf65d-150b-4e5a-8d62-eeed2635adfe)
+
+Dalam metode `hitungGaji` yang di-overide dalam kelas `staff`, perhitungan gaji karyawan staf diimplementasikan. Dalam hal ini, gaji staf adalah gaji dasar (yang diwarisi dari kelas `karyawan`) tanpa penambahan apapun. Dengan meng-overide metode `hitungGaji`, Anda dapat menentukan cara perhitungan gaji yang berbeda sesuai dengan jenis karyawan. Dalam hal ini, metode `hitungGaji` untuk karyawan staf mengembalikan nilai `gaji` yang merupakan gaji dasar staf tanpa tambahan apapun.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/2b21ad66-eed9-4dce-a74f-fc751f0f6d57)
+
+Metode `getjamKerja` dalam kelas `staff` mengembalikan nilai dari atribut `durasi_kerja`, yang merupakan durasi kerja karyawan manajer. Metode ini merupakan metode getter yang memungkinkan akses ke nilai `durasi_kerja` dari luar kelas.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/b6e7a808-7a06-4468-9671-7d1d11bfe233)
+
+### staff_magang.java
+
+Kode di atas adalah definisi kelas `staff_magang` yang merupakan turunan dari kelas `karyawan`. Kelas `staff_magang` memiliki atribut tambahan `shift` yang mewakili shift kerja karyawan magang. Konstruktor `staff_magang` digunakan untuk membuat objek `staff_magang` dengan menginisialisasi atribut-atribut kelas `karyawan` dan atribut tambahan `shift`. Berikut penjelasan singkat tentang kelas `staff_magang`:
+- Kelas `staff_magang` mewarisi atribut-atribut dasar dari kelas `karyawan`, seperti NIP, nama, email, nomor telepon, gaji, dan status.
+- Kelas `staff_magang` memiliki atribut tambahan:
+  1. `shift`: Atribut ini digunakan untuk menyimpan informasi tentang shift kerja karyawan magang (misalnya, shift pagi, siang, atau malam).
+- Konstruktor `staff_magang` digunakan untuk membuat objek `staff_magang`. Konstruktor ini menerima beberapa parameter yang digunakan untuk menginisialisasi atribut-atribut dalam kelas `staff_magang`. Parameter yang diterima meliputi NIP, nama, email, nomor telepon, shift, gaji, dan status.
+- Dalam konstruktor, Anda menginisialisasi atribut-atribut kelas `staff_magang` menggunakan nilai-nilai yang diterima dari parameter konstruktor. Beberapa atribut diwarisi dari kelas `karyawan`, seperti NIP, nama, email, nomor telepon, gaji, dan status. Sementara itu, atribut tambahan kelas `staff_magang`, yaitu `shift`, diinisialisasi dengan nilai dari parameter konstruktor.
+Ini adalah contoh pewarisan (inheritance) di mana kelas `staff_magang` adalah turunan dari kelas `karyawan`, dan kelas `staff_magang` memiliki atribut tambahan yang relevan dengan jenis karyawan "staff magang".
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/e97b018e-9cfd-4211-85b5-120eaf4889ff)
+
+Dalam metode `hitungGaji` yang di-overide dalam kelas `staff_magang`, perhitungan gaji karyawan staf magang diimplementasikan. Dalam hal ini, gaji staf magang adalah gaji dasar (yang diwarisi dari kelas `karyawan`) dibagi dengan atribut `shift`, yang mungkin merepresentasikan shift kerja. Dengan meng-overide metode `hitungGaji`, Anda dapat menentukan cara perhitungan gaji yang berbeda sesuai dengan jenis karyawan. Dalam hal ini, metode `hitungGaji` untuk karyawan staf magang mengembalikan hasil bagi antara gaji dan shift kerja, yang mungkin mencerminkan perhitungan gaji berdasarkan jumlah shift kerja yang dilakukan.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/11485507-dfd0-452d-aeeb-f8e900a67b8b)
+
+Metode `getjamKerja` dalam kelas `staff_magang` mengembalikan nilai dari atribut `durasi_kerja`, yang merupakan durasi kerja karyawan manajer. Metode ini merupakan metode getter yang memungkinkan akses ke nilai `durasi_kerja` dari luar kelas.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/b6e7a808-7a06-4468-9671-7d1d11bfe233)
+
+## model
+### databaseConnection.java
+
+Kode di atas adalah import statement yang mengimpor berbagai kelas dan pustaka yang diperlukan dalam paket `model` untuk mengelola database. Berikut penjelasan singkat tentang setiap import statement:
+1. `import java.sql.DriverManager;`: Ini mengimpor kelas `DriverManager` dari paket `java.sql`. `DriverManager` digunakan untuk mengelola daftar pengemudi JDBC dan mendapatkan koneksi ke database.
+2. `import java.sql.Connection;`: Ini mengimpor kelas `Connection` dari paket `java.sql`. `Connection` digunakan untuk mewakili koneksi ke database.
+3. `import java.sql.Statement;`: Ini mengimpor kelas `Statement` dari paket `java.sql`. `Statement` digunakan untuk mengeksekusi pernyataan SQL ke database.
+4. `import java.sql.PreparedStatement;`: Ini mengimpor kelas `PreparedStatement` dari paket `java.sql`. `PreparedStatement` digunakan untuk mengeksekusi pernyataan SQL yang telah diprepare sebelumnya, yang memungkinkan penggunaan parameter.
+5. `import java.sql.ResultSet;`: Ini mengimpor kelas `ResultSet` dari paket `java.sql`. `ResultSet` digunakan untuk menangani hasil dari pernyataan SQL yang mengembalikan data dari database.
+6. `import java.sql.ResultSetMetaData;`: Ini mengimpor kelas `ResultSetMetaData` dari paket `java.sql`. `ResultSetMetaData` digunakan untuk mengambil informasi tentang metadata (seperti nama kolom) dari hasil query dalam `ResultSet`.
+7. `import java.sql.SQLException;`: Ini mengimpor kelas `SQLException` dari paket `java.sql`. `SQLException` digunakan untuk menangani kesalahan yang terkait dengan database, seperti kesalahan SQL.
+8. `import java.util.ArrayList;`: Ini mengimpor kelas `ArrayList` dari paket `java.util`. `ArrayList` adalah struktur data yang digunakan untuk menyimpan koleksi data yang dinamis. Dalam konteks pengembangan aplikasi dengan database, `ArrayList` sering digunakan untuk menyimpan dan mengelola data yang diambil dari database.
+9. Semua import statement ini dibutuhkan dalam konteks pengembangan aplikasi yang berinteraksi dengan database menggunakan JDBC (Java Database Connectivity).
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/48a8fa58-601e-4e4a-8e7e-4ab357977523)
+
+Kode di atas mendefinisikan kelas `databaseConnection`, yang digunakan untuk mengelola koneksi database menggunakan JDBC (Java Database Connectivity). Berikut adalah penjelasan singkat tentang kelas `databaseConnection` dan metodenya:
+- `private final static String dbhost`: Variabel ini mengandung nama host atau alamat server database.
+- `private final static String dbname`: Variabel ini berisi nama database yang digunakan.
+- `private final static String username`: Variabel ini berisi username untuk mengakses database.
+- `private final static String password`: Variabel ini berisi password untuk mengakses database.
+- `public Connection connection = null;`: Variabel `connection` adalah objek yang digunakan untuk mewakili koneksi ke database. Ini adalah bagian penting untuk berinteraksi dengan database.
+- `public Statement statement;`, `public PreparedStatement preparedStatement;`, dan `public ResultSet resultSet;`: Variabel ini digunakan untuk menyimpan objek Statement, PreparedStatement, dan ResultSet yang digunakan dalam operasi SQL. Ini memungkinkan Anda untuk menjalankan pernyataan SQL dan mengelola hasilnya.
+- `public final void openConnection()`: Ini adalah metode yang digunakan untuk membuka koneksi ke database. Dalam metode ini:
+  - Anda mencoba membuat koneksi ke database menggunakan `DriverManager.getConnection()`. Detail koneksi seperti host, nama database, username, dan password diambil dari variabel yang telah didefinisikan sebelumnya.
+  - Jika koneksi berhasil dibuat, pesan "successfully" akan dicetak ke konsol.
+  - Jika terjadi kesalahan SQL saat mencoba membuat koneksi, metode `displayErrors(ex)` akan dipanggil untuk menampilkan pesan kesalahan.
+Kelas `databaseConnection` dan metodenya adalah komponen yang penting dalam pengembangan aplikasi yang berinteraksi dengan database. Dengan menggunakan kelas ini, Anda dapat membuat dan mengelola koneksi ke database MySQL dan menjalankan pernyataan SQL untuk mengambil, menyimpan, atau memperbarui data dalam database.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/3f87d48d-4dcc-469d-aab6-801b737bd824)
+
+Metode `closeConnection` dalam kelas `databaseConnection` digunakan untuk menutup semua objek yang terkait dengan koneksi database, seperti `ResultSet`, `Statement`, `PreparedStatement`, dan koneksi itu sendiri. Ini adalah praktik yang baik untuk selalu menutup objek-objek ini setelah selesai menggunakan koneksi database untuk mencegah kebocoran sumber daya dan menghindari masalah dalam manajemen sumber daya. Berikut adalah penjelasan singkat tentang apa yang dilakukan oleh metode `closeConnection`:
+- Metode ini mengelola penutupan objek-objek terkait dengan koneksi database dalam blok `try-catch`. Blok `try` digunakan untuk mencoba mengeksekusi kode penutupan, dan jika terjadi pengecualian, blok `catch` akan menangani kesalahan.
+- Dalam blok `try`, metode ini melakukan penutupan berurutan untuk objek-objek seperti `ResultSet`, `Statement`, `PreparedStatement`, dan koneksi `Connection`. Dalam hal ini, penggunaan `if (objek != null)` digunakan untuk memeriksa apakah objek ada sebelum mencoba menutupnya, sehingga tidak akan terjadi pengecualian jika objek tersebut null.
+- Setelah menutup objek-objek tersebut, metode ini juga mengatur semua objek tersebut menjadi null. Ini bertujuan untuk memastikan bahwa objek-objek tersebut tidak dapat digunakan kembali setelah ditutup.
+- Jika terjadi kesalahan SQL saat menutup objek-objek, metode `displayErrors(ex)` dipanggil untuk menampilkan pesan kesalahan.
+Dengan metode `closeConnection`, Anda dapat memastikan bahwa sumber daya yang digunakan dalam koneksi database dibersihkan dengan benar dan aman setelah selesai digunakan, yang merupakan praktik terbaik dalam pengembangan aplikasi yang berinteraksi dengan database.
+
+![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/d63b3a5c-1554-45a0-9f80-b42f33f28919)
+
+![Uploading image.png…]()
 
 ## Output Program
 1. Tampilan Menu Login
