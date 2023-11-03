@@ -32,7 +32,7 @@ ERD atau biasa disebut dengan Entity Relationship Diagram adalah suatu diagram y
 ## 📌 Hierarki Kelas
 Hierarki kelas dibuat berdasarkan program aplikasi yang telah dibuat, yang dimana pada program tersebut menerapkan materi inheritance atau bisa disebut dengan turunan. Berikut adalah hierarki kelas dari program Aplikasi Manajemen Karyawan Perusahaan yang telah dibuat:
 
-![PA_PBO_FLOWCHART-hc drawio](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/c7ad231a-f2fb-4dea-b29c-bbd0d3cf3dee)
+![PA_PBO_FLOWCHART-hc drawio (1)](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/6a357cc0-af73-41cb-b06a-3eb391109fed)
   
 ## 📌 Source Code dan Penjelasan
 ### package controler
