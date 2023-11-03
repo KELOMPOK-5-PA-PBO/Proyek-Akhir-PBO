@@ -4,7 +4,7 @@ KELOMPOK 5
 1. Muthmainnah Aisyah (2209116001)
 2. Vera Santi Wijaya (2209116007)
 
-## Latar Belakang
+## 📌 Latar Belakang
 MuVista Glow Company adalah perusahaan yang berfokus pada industri kecantikan. Perusahaan ini mengalami pertumbuhan yang sangat pesat dalam beberapa tahun terakhir, yang menyebabkan terjadinya peningkatan yang signifikan pada jumlah karyawan perusahaan. Dengan bertambahnya jumlah karyawan menjadi sebuah tantangan bagi perusahaan dalam memanajemen data para karyawan di perusahaannya. MuVista Glow Company menyadari bahwa pengelolaan data karyawan tidak lagi dapat dilakukan secara manual sehingga perusahaan berusaha mengambil langkah proaktif dalam pengelolaan data karyawan. Dari permasalahan tersebut MuVista Glow Company membuat sebuah sistem aplikasi yang dapat memudahkan perusahaan dalam memanajemen data para karyawannya.
 
 ## 📌 Deskripsi Project
@@ -18,20 +18,23 @@ Aplikasi manajemen karyawan perusahaan adalah sebuah perangkat lunak yang diranc
 7. **Monitoring Jumlah Karyawan:** Aplikasi ini juga menyediakan fungsionalitas untuk memantau jumlah karyawan dalam perusahaan. Sebagai contoh, ada metode `hitungKaryawan()` yang digunakan untuk mengambil jumlah total karyawan dalam database.
 Aplikasi ini memberikan manfaat besar bagi perusahaan, karena memungkinkan mereka untuk mengelola dan mengakses informasi karyawan dengan lebih efisien. Dengan pengkategorian berdasarkan jabatan, perusahaan dapat mengelola gaji, jam kerja, dan atribut lainnya sesuai dengan kebutuhan masing-masing karyawan. Ini juga membantu dalam pemantauan karyawan dan pengambilan keputusan yang lebih baik terkait sumber daya manusia.
 
-## 📊 Flowchart
+## 📌 Flowchart
+Dari sebuah Aplikasi Manajemen Karyawan Perusahaan, dibuatkanlah sebuah alur diagram atau yang dibasa dikenal dengan sebutan flowchart. Flowchart digunakan untuk menjelaskan alur dari sebuah program. Berikut adalah flowchart dari Aplikasi Manajemen Karyawan Perusahaan:
 ![PA_PBO_FLOWCHART-flowchart-full drawio](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/8877c8b9-9040-49a3-9e99-af2febb96581)
 
-## 🛢ERD
+## 📌 ERD
+ERD atau biasa disebut dengan Entity Relationship Diagram adalah suatu diagram yang digunakan untuk merancang sebuah basis data, yang dipergunakan untuk memperlihatkan relasi atau hubungan antar objek atau entitas. Dalam Aplikasi Manajemen Karyawan Perusahaan ini menggunakan sebuah basis data, sehingga dirancanglah sebuah basis data yang dapat dilihat sebagai berikut:
+1. Logical ERD
 ![PA-VER-6 1](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/2274403a-843e-49c5-980c-5143b4608e31)
-
+2. Relational ERD
 ![PA-VER-6 2](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/b5f14786-4842-4541-8ff8-809cd1d87a1c)
 
-## Hierarki Kelas
-Hierarki kelas dibuat berdasarkan program aplikasi yang telah dibuat, yang dimana pada program tersebut menerapkan materi inheritance atau bisa disebut dengan turunan. Berikut adalah hierarki kelas dari program aplikasi yang telah dibuat:
+## 📌 Hierarki Kelas
+Hierarki kelas dibuat berdasarkan program aplikasi yang telah dibuat, yang dimana pada program tersebut menerapkan materi inheritance atau bisa disebut dengan turunan. Berikut adalah hierarki kelas dari program Aplikasi Manajemen Karyawan Perusahaan yang telah dibuat:
 
 ![PA_PBO_FLOWCHART-hc drawio](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122006658/c7ad231a-f2fb-4dea-b29c-bbd0d3cf3dee)
   
-## Source Code dan Penjelasan
+## 📌 Source Code dan Penjelasan
 ### package controler
 #### admin.java
 mengimpor paket java.sql.SQLException dan menggunakan kelas model.databaseConnection untuk mengelola koneksi ke database. 
@@ -401,7 +404,7 @@ Dengan demikian, kode ini digunakan untuk memeriksa apakah username dan password
 
 
 
-## Output Program
+## 📌 Output Program
 1. Tampilan Menu Login
    
 ![image](https://github.com/KELOMPOK-5-PA-PBO/Proyek-Akhir-PBO/assets/122012870/63209e9b-926e-49f5-a61d-2fe98cbf5509)
